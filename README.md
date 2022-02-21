@@ -20,17 +20,17 @@ def delete_mn_btn():
 ```
 
 ## For executing files
-'''
+```
 def show_opt():
 	file = ent.get()+"/"+g.get(g.curselection()[0])
 	os.startfile(file)
-'''
+```
 
 ## For clearing File listbox
-'''
+```
 def cllt():
 	g.delete("0",END)
-'''
+```
 
 ## For copying the path of file or folder
 def btn_copy_fun():
@@ -38,7 +38,7 @@ def btn_copy_fun():
 	t.clipboard_append(ent.get())
   
 ## For creating file
-'''
+```
 def c_n_flr():
 	try:
 		f = sd.askstring("File","Enter filename.")
@@ -48,10 +48,10 @@ def c_n_flr():
 		btn_path_fun()
 	except:
 		msg.showerror("Error","Not able to make new directory.")
-'''
+```
 
 ## For copying file
-'''
+```
 def copy_fl():
 	try:
 		a=ent.get()+"/"+g.get(g.curselection()[0])
@@ -64,10 +64,10 @@ def copy_fl():
 	except Exception as err:
 		print(err)
     msg.showerror("Error","Error while copying")
-'''
+```
 
 ## For deleting selected file
-'''
+```
 def opn_fl():
 	path=ent.get()+"/"+g.get(g.curselection()[0])
 	if (os.path.isdir(path) == True):
@@ -78,10 +78,10 @@ def opn_fl():
 	else:
 		show_opt()
 		btn_path_fun()
-'''
+```
 
 ## Filling the file listBox
-'''
+```
 def btn_path_fun():
 	cllt()
 	path = ent.get()
@@ -93,4 +93,4 @@ def btn_path_fun():
 			n=n+1
 	except:
 		msg.showerror("Error","Path not found")
-'''
+```
