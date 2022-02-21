@@ -33,9 +33,11 @@ def cllt():
 ```
 
 ## For copying the path of file or folder
+```
 def btn_copy_fun():
 	t.clipboard_clear()
 	t.clipboard_append(ent.get())
+```
   
 ## For creating file
 ```
