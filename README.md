@@ -3,7 +3,7 @@ This is file explorer for windows 10 , made fully in python 3.6
 #Functions:-
 
 ## For deleting folders or files
-'''
+```
 def delete_mn_btn():
 	pth=ent.get()+"/"+g.get(g.curselection()[0])
 	try:
@@ -17,7 +17,7 @@ def delete_mn_btn():
 			btn_path_fun()
 	except:
 		msg.showerror("File","Error while deleting.")
-'''
+```
 
 ## For executing files
 '''
