@@ -1,6 +1,7 @@
-# file-explorer
+# File explorer
 This is file explorer for windows 10 , made fully in python 3.6
-#Functions:-
+
+# Functions:-
 
 ## For deleting folders or files
 ```
@@ -96,3 +97,7 @@ def btn_path_fun():
 	except:
 		msg.showerror("Error","Path not found")
 ```
+
+# Demo (For Windows 8 | 10 | 11)
+* Download file from [here](http://github.com/abhineetraj1/file-explorer/raw/main/app.exe)
+* Run app.exe file
