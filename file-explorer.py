@@ -6,7 +6,11 @@ import shutil as sl
 import datetime as dt
 from tkinter import simpledialog as sd
 from tkinter import messagebox as msg
+
+#For randomly selecting colours
 rdmc = rdm.choice(["green","blue","white","yellow","orange","pink","purple"])
+
+#This function is for deleting folders or files
 def delete_mn_btn():
 	pth=ent.get()+"/"+g.get(g.curselection()[0])
 	try:
@@ -20,14 +24,22 @@ def delete_mn_btn():
 			btn_path_fun()
 	except:
 		msg.showerror("File","Error while deleting.")
+
+#This function is for executing files
 def show_opt():
 	file = ent.get()+"/"+g.get(g.curselection()[0])
 	os.startfile(file)
+
+#This function is for clearing File listbox
 def cllt():
 	g.delete("0",END)
+
+#This function is for copying the path of file or folder
 def btn_copy_fun():
 	t.clipboard_clear()
 	t.clipboard_append(ent.get())
+
+#This is function is for creating file
 def c_n_flr():
 	try:
 		f = sd.askstring("File","Enter filename.")
@@ -37,8 +49,12 @@ def c_n_flr():
 		btn_path_fun()
 	except:
 		msg.showerror("Error","Not able to make new directory.")
+
+#This function is for clearing list box
 def clet():
 	ent.delete(0,END)
+
+#This function is for displaying list of directories of desktop in listbox
 def des_btn():
 	clet()
 	cllt()
@@ -52,6 +68,8 @@ def des_btn():
 			n=n+1
 	except:
 		msg.showerror("Error","Path not found")
+
+#This function is for displaying list of directories of music in listbox
 def mus_btn():
 	cllt()
 	clet()
@@ -65,6 +83,8 @@ def mus_btn():
 			n=n+1
 	except:
 		msg.showerror("Error","Path not found")
+
+#This function is for displaying list of directories of picture in listbox
 def pic_btn():
 	cllt()
 	clet()
@@ -78,6 +98,8 @@ def pic_btn():
 			n=n+1
 	except:
 		msg.showerror("Error","Path not found")
+
+#This function is for displaying list of directories of video in listbox
 def vid_btn():
 	cllt()
 	clet()
@@ -91,6 +113,8 @@ def vid_btn():
 			n=n+1
 	except:
 		msg.showerror("Error","Path not found")
+
+#This function is for displaying list of directories of download in listbox
 def down_btn():
 	cllt()
 	clet()
@@ -104,6 +128,8 @@ def down_btn():
 			n=n+1
 	except:
 		msg.showerror("Error","Path not found")
+
+#This function is for displaying list of directories of downloads in listbox
 def doc_btn():
 	cllt()
 	clet()
@@ -117,6 +143,8 @@ def doc_btn():
 			n=n+1
 	except:
 		msg.showerror("Error","Path not found")
+
+#This function is for copying file
 def copy_fl():
 	try:
 		a=ent.get()+"/"+g.get(g.curselection()[0])
@@ -129,6 +157,8 @@ def copy_fl():
 	except Exception as err:
 		print(err)
 		msg.showerror("Error","Error while copying")
+
+#This function is for deleting selected file
 def opn_fl():
 	path=ent.get()+"/"+g.get(g.curselection()[0])
 	if (os.path.isdir(path) == True):
@@ -139,6 +169,8 @@ def opn_fl():
 	else:
 		show_opt()
 		btn_path_fun()
+
+#This function is for filling the file listBox
 def btn_path_fun():
 	cllt()
 	path = ent.get()
@@ -150,6 +182,8 @@ def btn_path_fun():
 			n=n+1
 	except:
 		msg.showerror("Error","Path not found")
+
+#GUI of application
 t = Tk()
 t.title("Abhineet Raj - FILE Explorer")
 t.geometry("600x400")
@@ -171,6 +205,8 @@ btn2 = Button(t,command=opn_fl, text="Open",font=40 ,activebackground="green", a
 btn5 = Button(t,command=copy_fl, text="Copy file",font=40 ,activebackground="green", activeforeground="white", background="white", relief="groove")
 m = Scrollbar(t, orient="vertical")
 g = Listbox(t, height=14, width=60, yscrollcommand=m.set)
+
+#Positioning of widgets
 m.configure(command=g.yview)
 bg.place(x=0,y=0)
 lb.place(x=0,y=350)
